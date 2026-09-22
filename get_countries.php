@@ -9,7 +9,7 @@ if (!$continentId) {
     exit;
 }
 
-// Prepared statement — never concatenate $_GET values into SQL directly.
+//prepared statement
 $stmt = $pdo->prepare('SELECT id, name FROM countries WHERE continent_id = :id ORDER BY name');
 $stmt->execute(['id' => $continentId]);
 
